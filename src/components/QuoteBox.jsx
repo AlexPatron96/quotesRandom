@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { useState } from 'react';
 import ButtonBox from './ButtonBox';
 
+
 const  QuoteBox = ({quotes}) => {
-    const colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
+    const colorArray = [
+    '#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
 	'#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
 	'#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
 	'#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
@@ -13,16 +16,25 @@ const  QuoteBox = ({quotes}) => {
 	'#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
 	'#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
 
-    const colorRamdon = Math.floor(Math.random()* colorArray.length)
-	const quoteRamdon = Math.floor(Math.random()* quotes.length)
+    const [colorRandom , setColorRandom] = useState(0)
+    const [quoteRandom , setquoteRamdon] = useState(0)
+    
     const clickBox = () => {
-    const quoteRamdon = Math.floor(Math.random() * quotes.length)
+
+        //const quoteRamdon = Math.floor(Math.random() * quotes.length)
+        setColorRandom(Math.floor(Math.random() * colorArray.length))
+        setquoteRamdon(Math.floor(Math.random() * quotes.length))
+        console.log('el color randoms denmtro de la fu'+colorRandom);
+        
+
     }
+    document.body.style = `background:${colorArray[colorRandom]};`
+
     return (
-        <div>
-            <h2>{quotes[0].quote}</h2>
-			<h2>{quotes[0].author}</h2>
-            <ButtonBox clickBox={clickBox}></ButtonBox>
+        <div className='quoteBox' style={{background: "gray"}}>
+            <h2 style={{color:`${colorArray[colorRandom]}`}} > <i class='bx bx-message-square-dots' ></i> {quotes[quoteRandom].quote}</h2>
+			<h2 style={{color:`${colorArray[colorRandom]}`}} > <i class='bx bxs-user-circle'></i> {quotes[quoteRandom].author}</h2>
+            <ButtonBox clickBox={clickBox} colorArray={colorArray[colorRandom]}></ButtonBox>
         </div>
     );    
 }

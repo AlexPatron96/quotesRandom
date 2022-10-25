@@ -2,14 +2,12 @@ import React, { Component } from 'react';
 import { useState } from 'react';
 
 
-const  ButtonBox = ({clickBox}) => {
-
+const  ButtonBox = ({clickBox,colorArray}) => {
     
     //setquoteArray(quoteArray)
-
     return (
         <div>
-            <button onClick={clickBox}>Next</button>
+            <button style={{color:`${colorArray}`}} onClick={clickBox}>Next</button>
         </div>
     );    
 }
