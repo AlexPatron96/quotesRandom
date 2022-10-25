@@ -20,20 +20,23 @@ const  QuoteBox = ({quotes}) => {
     const [quoteRandom , setquoteRamdon] = useState(0)
     
     const clickBox = () => {
-
         //const quoteRamdon = Math.floor(Math.random() * quotes.length)
         setColorRandom(Math.floor(Math.random() * colorArray.length))
         setquoteRamdon(Math.floor(Math.random() * quotes.length))
         console.log('el color randoms denmtro de la fu'+colorRandom);
-        
-
     }
     document.body.style = `background:${colorArray[colorRandom]};`
 
     return (
-        <div className='quoteBox' style={{background: "gray"}}>
-            <h2 style={{color:`${colorArray[colorRandom]}`}} > <i class='bx bx-message-square-dots' ></i> {quotes[quoteRandom].quote}</h2>
-			<h2 style={{color:`${colorArray[colorRandom]}`}} > <i class='bx bxs-user-circle'></i> {quotes[quoteRandom].author}</h2>
+        <div className='quoteBox'>
+            <h2 style={{color:`${colorArray[colorRandom]}`}} > 
+                <i class='bx bx-message-square-dots' ></i> 
+                {quotes[quoteRandom].quote}
+            </h2>
+			<h2 style={{color:`${colorArray[colorRandom]}`}} > 
+                <i class='bx bxs-user-circle'></i> 
+                {quotes[quoteRandom].author}
+            </h2>
             <ButtonBox clickBox={clickBox} colorArray={colorArray[colorRandom]}></ButtonBox>
         </div>
     );    

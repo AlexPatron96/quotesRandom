@@ -6,9 +6,7 @@ import QuoteBox from './components/QuoteBox'
 
 
 function App() {
-
 	
-
 	//console.log(quotes.length);
 	//const colorRamdon = Math.floor(Math.random()* colorArray.length)
 	//const quoteRamdon = Math.floor(Math.random()* quotes.length)

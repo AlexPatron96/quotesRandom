@@ -7,7 +7,10 @@ const  ButtonBox = ({clickBox,colorArray}) => {
     //setquoteArray(quoteArray)
     return (
         <div>
-            <button style={{color:`${colorArray}`}} onClick={clickBox}>Next</button>
+            <button className='buttonBox' style={{background:`${colorArray}`}} onClick={clickBox}>
+                Next 
+                <i class='bx bx-right-arrow' ></i>
+            </button>
         </div>
     );    
 }

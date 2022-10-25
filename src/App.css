@@ -8,4 +8,12 @@
 .quoteBox{
   min-height: 250px;
   padding: 3rem;
+  border-radius: 30px;
+  background: whitesmoke;
+  box-shadow: 5px 5px 5px gray;
+  text-shadow: 1px 1px 1px gray;
+  font-size: 20px;
+}
+.buttonBox{
+  text-shadow: 1px 1px 1px gray;
 }
